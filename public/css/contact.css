@@ -1,18 +1,21 @@
-.contact {
+.contact, .about {
 	padding-top: 5rem;
 	padding-bottom: 5rem;
 }
-.contact .raw {
+.contact .raw,
+.about .raw {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	padding-bottom: 5rem;
 }
-.contact .raw h1 {
+.contact .raw .title,
+.about .raw .title {
 	font-size: 2.5rem;
 	color: var(--color1);
 }
-.contact .raw .slogan {
+.contact .raw .slogan,
+.about .raw .slogan {
 	width: 40%;
 }
 
@@ -28,11 +31,14 @@
 	border-radius: 0.75rem;
 }
 
-.contact .raw .left h2{
+.contact .raw .left h2,
+.contact .social h3 {
 	font-size: 1.3rem;
 	text-align: center;
 	color: var(--color1);
-	margin-bottom: 1.5rem;
+}
+.contact .raw .left h2 {
+	margin-bottom: 1.2rem;
 }
 
 .contact .raw .left form{
@@ -44,7 +50,9 @@
 .contact .raw .left form .box {
 	margin-bottom: 0.75rem;
 }
-
+.contact .raw .left form .box .label{
+	margin-bottom: 0.25rem;
+}
 .contact .raw .left form input {
 	height: 40px
 }
@@ -57,7 +65,7 @@
 	border-radius: .5rem;
 }
 .contact .raw .left form textarea {
-	height: 160px;
+	height: 140px;
 }
 
 .contact .raw .left form button {
@@ -81,10 +89,10 @@
 .contact .raw .right .box {
 	display: flex;
 	align-items: center;
-	margin: 2rem 0;
+	margin: 1.5rem 0;
 }
 .contact .raw .right .box i {
-	font-size: 3rem;
+	font-size: 2.2rem;
 	color: var(--color1);
 	margin-right: 0.5rem;
 }
@@ -92,3 +100,26 @@
 	font-size: 1rem;
 }
 
+.contact .social {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.contact .social .links {
+	padding-top: 0.75rem;
+}
+
+.contact .social .links i {
+	font-size: 1.5rem;
+	color: var(--color1);
+	margin-right: 0.25rem;
+}
+
+.contact .social .links i:hover {
+	color: var(--color2);
+}
+
+/* About Page - Slider*/

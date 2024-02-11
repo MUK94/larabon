@@ -41,7 +41,7 @@
 			</div>
 		@endguest
 		<div class="btn-action">
-			<a href="/competences" class="btn btn-2">Vender Vos Compétences</a>
+			<a href="/dashboard" class="btn btn-2">Vender Vos Compétences</a>
 		</div>
 	</div>
 </nav>

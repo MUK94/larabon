@@ -4,7 +4,7 @@
 	<div class="listings-container">
 		<div class="contact">
 			<div class="raw">
-				<h2 class="title">Contactez-Nous!</h1>
+				<h1 class="title">Contact</h1>
 				<div class="slogan">
 					<p>
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum accusamus
@@ -15,7 +15,7 @@
 			</div>
 			<div class="raw form-container">
 				<div class="left">
-					<h2>Envoyez un Message</h2>
+					<h2 class="subtitle">Envoyez un Message</h2>
 					<form action="" method="">
 						<div class="box">
 							<label for="name">Nom</label>
@@ -50,17 +50,17 @@
 						<a href="mailto:contact@bonnafaire.com">
 							<span>contact@bonnafaire.com</span>
 						</a>
-				</div>
-				<div class="social">
-					<h3>Nous Suivre</h3>
-					<div class="links">
-						<a href="#"><i class="fa-brands fa-facebook"></i></a>
-						<a href="#"><i class="fa-brands fa-linkedin"></i></a>
-						<a href="#"><i class="fa-brands fa-twitter"></i></a>
-						<a href="#"><i class="fa-brands fa-youtube"></i></a>
-						<a href="#"><i class="fa-brands fa-instagram"></i></a>
 					</div>
-				</div>
+					<div class="social">
+						<h3>Nous Suivre</h3>
+						<div class="links">
+							<a href="#"><i class="fa-brands fa-facebook"></i></a>
+							<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+							<a href="#"><i class="fa-brands fa-twitter"></i></a>
+							<a href="#"><i class="fa-brands fa-youtube"></i></a>
+							<a href="#"><i class="fa-brands fa-instagram"></i></a>
+						</div>
+					</div>
 			</div>
 		</div>
 	</div>
