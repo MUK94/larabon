@@ -20,7 +20,4 @@
 	# Add profile settings on Dashboard
 	# CRUD on user profile
 
-# 10. Add chat option to exchange with vendor/owner/author/publisher
-# 11. Add chat option to exchange with vendor/owner/author/publisher
-
 
