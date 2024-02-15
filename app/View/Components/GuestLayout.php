@@ -4,6 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
+use App\Models\Service;
 
 class GuestLayout extends Component
 {
@@ -12,6 +13,8 @@ class GuestLayout extends Component
      */
     public function render(): View
     {
-        return view('layouts.guest');
+			$title = 'Dashboard';
+			$services = Service::all();
+      return view('layouts.guest')->with(['services'=>$services, 'title'=>$title]);
     }
 }

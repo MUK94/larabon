@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Competence;
+use App\Models\Service;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class CompetenceSeeder extends Seeder
+class ServicesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-			
+        Service::factory()->count(10)->create();
     }
 }

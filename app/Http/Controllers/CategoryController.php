@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\Models\Competence;
 
-class listingsController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index()
     {
-			$title = "Tous Les Services";
-			$competences = Competence::all();
-      return view('listings.index')->with(['competences'=>$competences, 'title'=>$title]);
+      return view();
     }
 
     /**
@@ -37,7 +35,7 @@ class listingsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Category $category)
     {
         //
     }
@@ -45,7 +43,7 @@ class listingsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Category $category)
     {
         //
     }
@@ -53,7 +51,7 @@ class listingsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -61,7 +59,7 @@ class listingsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Category $category)
     {
         //
     }

@@ -5,7 +5,7 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<meta name="csrf-token" content="{{ csrf_token() }}">
 
-			<title>{{ config('app.name', 'Bonnafaire') }}</title>
+			<title>{{ config('app.name', 'Bonnafaire') }} - </title>
 
 			{{-- Tailwind --}}
 			<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -43,12 +43,20 @@
 					<div class="box">
 						<h3>Bonnafaire</h3>
 						<ul class="box">
-							<li>Le meilleur site de mise en relation en République de Guinée.</li>
+							<li>Le meilleur site de mise en relation en <br>République de Guinée.</li>
 							<li><i class="fa-solid fa-phone"></i>+224 621149477</li>
 							<li><i class="fa-solid fa-location-dot"></i>Kipe, Centre Emetteur</li>
 							<li><a href="mailto:contact@bonnafaire.com"><i class="fa-solid fa-envelope"></i>contact@bonnafaire.com</a></li>
 						</ul>
 					</div>
+				</div>
+				<div class="col ">
+					<h3>Categories</h3>
+					<ul class="box">
+						@foreach ($categories as $category)
+							<li><a href="#">{{ $category->name }}</a></li>
+						@endforeach
+					</ul>
 				</div>
 				<div class="col ">
 					<h3>A Propos</h3>

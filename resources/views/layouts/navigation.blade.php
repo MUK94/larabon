@@ -4,12 +4,13 @@
 			<a href="/" class="logo"><h1>Bonnafaire</h1></a>
 	</div>
 	<div class="nav-cat-dropdown">
-		<a href="/les-services" class="dropdown-link"><i class="fas fa-list"></i>Catégories</a>
+		<a href="" class="dropdown-link" onclick="event.preventDefault();"><i class="fas fa-list"></i>Catégories <i class="fa-solid fa-caret-down"></i></a>
 		<ul class="dropdown-content">
-			<li><a href="#">Category 1</a></li>
-			<li><a href="#">Category 2</a></li>
-			<li><a href="#">Category 3</a></li>
-			<!-- Add more categories as needed -->
+
+			<li><a href="/services">Tout</a></li>
+			@foreach ($categories as $category)
+				<li><a href="#">{{ $category->name }}</a></li>
+			@endforeach
 		</ul>
 	</div>
 	<div class="nav-container">
@@ -23,11 +24,11 @@
 		{{-- User Auth --}}
 		@auth
 			<div class="nav-user-auth nav-cat-dropdown">
-				<a href="#" class="dropdown-link">Mon Profile<i class="fa-solid fa-caret-down"></i></a>
+				<a href="" class="dropdown-link"  onclick="event.preventDefault();">Mon Profil<i class="fa-solid fa-caret-down"></i></a>
 				<ul class="dropdown-content">
-						<li><a href="#">Tableau de bord</a></li>
-						<li><a href="#">Paramètres</a></li>
-						<li><a href="#">Déconnexion</a></li>
+					<li><a href="/dashboard">Tableau de bord</a></li>
+					<li><a href="/profile">Profil</a></li>
+					<li><a href="#">Déconnexion</a></li>
 				</ul>
 			</div>
 		@endauth
@@ -41,7 +42,7 @@
 			</div>
 		@endguest
 		<div class="btn-action">
-			<a href="/dashboard" class="btn btn-2">Vender Vos Compétences</a>
+			<a href="/add-service" class="btn btn-2">Vender vos Compétences</a>
 		</div>
 	</div>
 </nav>

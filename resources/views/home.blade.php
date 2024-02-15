@@ -1,33 +1,33 @@
 @extends('layouts.app')
-
+<title>{{ $title }} | Bonnafaire </title>
 @section('content')
-<section class="banner">
-	<div class="left">
-		<h1>Des <span>Travailleurs Qualifiés</span> et des Annonces Pertinantes pour tous vos <span>Besoins</span></h1>
-		<div class="search">
-			<form action="/search" method="GET">
-				<div>
-						<i class="fa-solid fa-magnifying-glass"></i><input type="text" name="query" placeholder="Quoi...">
-				</div>
-				<!-- Add a select element for states -->
-				<div class="search-dropdown">
-					<label for="state"><i class="fa-solid fa-location-dot"></i> Où...</label>
-					<select id="state" name="state">
+<section class="banner-section">
+	<div class="banner">
+		<div class="left">
+			<h1>Des <span>Travailleurs Qualifiés</span> et des Annonces Pertinantes pour tous vos <span>Besoins</span></h1>
+			<div class="search">
+				<form action="/search" method="GET">
+					<div>
+							<i class="fa-solid fa-magnifying-glass"></i><input type="text" name="query" placeholder="Quoi...">
+					</div>
+					<!-- Add a select element for states -->
+					<div class="search-dropdown">
+						<label for="state"><i class="fa-solid fa-location-dot"></i> Où...</label>
+						<select id="state" name="state">
 							<option value=""></option>
 							<option value="state2">Kaloum</option>
 							<option value="state3">Hamdallaye</option>
 							<option value="state4">Matam</option>
 							<option value="state5">Kaloum</option>
-					<!-- Add more options as needed -->
-					</select>
-				</div>
-				<button type="submit">Recherchez</button>
-			</form>
+						<!-- Add more options as needed -->
+						</select>
+					</div>
+					<button type="submit">Recherchez</button>
+				</form>
+			</div>
 		</div>
-	</div>
-	<div class="right ">
-		<div class="slider-container">
-			<img src="{{ asset('img/electrician.jpg') }}" alt="Mechanic">
+		<div class="right-banner ">
+			<img src="{{ asset('img/worker-6.webp') }}" alt="Travailleur">
 		</div>
 	</div>
 </section>
@@ -69,11 +69,11 @@
 	<div class="slogan-raw">
 		<div class="box">
 			<i class="fa-solid fa-briefcase"></i>
-			<a href="/les-services" class="pro">Je Cherche des Professionnels</a>
+			<a href="/services" class="pro">Je Cherche des Professionnels</a>
 		</div>
 		<div class="box">
 			<i class="fa-solid fa-graduation-cap"></i>
-			<a href="/competences" class="skill">Vendre mes Compétences</a>
+			<a href="/add-service" class="skill">Vendre mes Services</a>
 		</div>
 		<div class="box">
 			<i class="fa-solid fa-bullhorn"></i>
@@ -85,194 +85,36 @@
 <section class="recommended-container">
 	<h2>Les plus <span>Recommandés</span></h2>
 	<div class="container">
-		<div class="card">
-			<a href="#">
-				<div class="image">
-					<img src="{{ asset('img/coder.jpg') }}" alt="" srcset="">
-				</div>
-				<div class="detail">
-					<span class="cat">Informatique</span>
-					<h4>Developpement de Siteweb en Python/Django and ReactJS</h4>
-					<div class="raw">
-						<div class="owner">
-							<img src="{{ asset('img/user.png') }}" alt="">
-							<span>Aicha Diallo</span>
-						</div>
-						<div class="review">
-							<i class="fa-solid fa-star"></i><span> 5.0 (9 reviews)</span>
-						</div>
+		@foreach ($services as $service)
+			<div class="card">
+				<a href="{{ route('serviceListings.detail', ['slug'=>$service->slug]) }}">
+					<div class="image">
+						<img src="{{ asset('storage/cover_images/'.$service->cover_image) }}" alt="" srcset="">
 					</div>
-					<div class="price">
-						<button href="#">A partir de 15.500.000 <span class="currency">FG</span></button>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="card">
-			<a href="#">
-				<div class="image">
-					<img src="{{ asset('img/designer.jpg') }}" alt="" srcset="">
-				</div>
-				<div class="detail">
-					<span class="cat">Informatique</span>
-					<h4>Graphic Design, Posters, Bouquet & Anniversaire</h4>
-					<div class="raw">
-						<div class="owner">
-							<img src="{{ asset('img/user.png') }}" alt="">
-							<span>Kamano</span>
+					<div class="detail">
+						<span class="cat"> {{ $service->category->name }}</span>
+						<h4>{{ $service->title }}</h4>
+						<div class="raw">
+							<div class="owner">
+								<img src="{{ asset('img/user.png') }}" alt="">
+								<span>{{ $service->user->name }}</span>
+							</div>
+							<div class="review">
+								<i class="fa-solid fa-star"></i><span> 5.0 (9 reviews)</span>
+							</div>
 						</div>
-						<div class="review">
-							<i class="fa-solid fa-star"></i><span> 3.0 (4 reviews)</span>
+						<div class="price">
+							<button href="#">A partir de <span>{{ $service->price }}</span><span class="currency">FG</span></button>
 						</div>
 					</div>
-					<div class="price">
-						<button href="#">A partir de 1.200.000 <span class="currency">FG</span></button>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="card">
-			<a href="#">
-				<div class="image">
-					<img src="{{ asset('img/plumber-1.jpg') }}" alt="" srcset="">
-				</div>
-				<div class="detail">
-					<span class="cat">Plumbérie</span>
-					<h4>J'offre toute sorte de Service en Plumbérie</h4>
-					<div class="raw">
-						<div class="owner">
-							<img src="{{ asset('img/user.png') }}" alt="">
-							<span>Mouctar Balde</span>
-						</div>
-						<div class="review">
-							<i class="fa-solid fa-star"></i><span> 5.0 (9 reviews)</span>
-						</div>
-					</div>
-					<div class="price">
-						<button href="#">A partir de 250.000 <span class="currency">FG</span></button>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="card">
-			<a href="#">
-				<div class="image">
-					<img src="{{ asset('img/realstate-1.jpg') }}" alt="" srcset="">
-				</div>
-				<div class="detail">
-					<span class="cat">Immobilier</span>
-					<h4>Agent Immobilier de plus de 10 ans d'experience</h4>
-					<div class="raw">
-						<div class="owner">
-							<img src="{{ asset('img/user.png') }}" alt="">
-							<span>Laye Conde</span>
-						</div>
-						<div class="review">
-							<i class="fa-solid fa-star"></i><span> 4.5 (9 reviews)</span>
-						</div>
-					</div>
-					<div class="price">
-						<button href="#">A partir de 850.000 <span class="currency">FG</span></button>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="card">
-			<a href="#">
-				<div class="image">
-					<img src="{{ asset('img/mechanic.jpg') }}" alt="" srcset="">
-				</div>
-				<div class="detail">
-					<span class="cat">Mecanique</span>
-					<h4>Réparation de voiture Electrique Neuve et d'Occasion</h4>
-					<div class="raw">
-						<div class="owner">
-							<img src="{{ asset('img/user.png') }}" alt="">
-							<span>Aicha Diallo</span>
-						</div>
-						<div class="review">
-							<i class="fa-solid fa-star"></i><span> 5.0 (9 reviews)</span>
-						</div>
-					</div>
-					<div class="price">
-						<button href="#">A partir de 150.000 <span class="currency">FG</span></button>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="card">
-			<a href="#">
-				<div class="image">
-					<img src="{{ asset('img/beauty-1.jpg') }}" alt="" srcset="">
-				</div>
-				<div class="detail">
-					<span class="cat">Beauté</span>
-					<h4>Prendre soin de vous c'est avec Nous</h4>
-					<div class="raw">
-						<div class="owner">
-							<img src="{{ asset('img/user.png') }}" alt="">
-							<span>Kamano</span>
-						</div>
-						<div class="review">
-							<i class="fa-solid fa-star"></i><span> 3.0 (4 reviews)</span>
-						</div>
-					</div>
-					<div class="price">
-						<button href="#">A partir de 25.000 <span class="currency">FG</span></button>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="card">
-			<a href="#">
-				<div class="image">
-					<img src="{{ asset('img/electrician.jpg') }}" alt="" srcset="">
-				</div>
-				<div class="detail">
-					<span class="cat">Electricité</span>
-					<h4>Plus de 5 ans d'Expérience dans l'Electricité</h4>
-					<div class="raw">
-						<div class="owner">
-							<img src="{{ asset('img/user.png') }}" alt="">
-							<span>Mouctar Balde</span>
-						</div>
-						<div class="review">
-							<i class="fa-solid fa-star"></i><span> 5.0 (9 reviews)</span>
-						</div>
-					</div>
-					<div class="price">
-						<button href="#">A partir de 250.000 <span class="currency">FG</span></button>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="card">
-			<a href="#">
-				<div class="image">
-					<img src="{{ 'img/cleaner-1.jpg' }}" alt="" srcset="">
-				</div>
-				<div class="detail">
-					<span class="cat">Nettoyage</span>
-					<h4>Des Services de Nettoyage repondant a tout vos Besoins</h4>
-					<div class="raw">
-						<div class="owner">
-							<img src="{{ asset('img/user.png') }}" alt="">
-							<span>Laye Conde</span>
-						</div>
-						<div class="review">
-							<i class="fa-solid fa-star"></i><span> 4.5 (9 reviews)</span>
-						</div>
-					</div>
-					<div class="price">
-						<button href="#">A partir de 75.000 <span class="currency">FG</span></button>
-					</div>
-				</div>
-			</a>
-		</div>
+				</a>
+			</div>
+		@endforeach
+	</div>
 
 	</div>
 	<div class="btn">
-		<a href="#">Voir Plus <i class="fa-solid fa-circle-arrow-right"></i></a>
+		<a href="/services">Voir Plus <i class="fa-solid fa-circle-arrow-right"></i></a>
 	</div>
 </section>
 <section class="category-container">
@@ -368,7 +210,7 @@
 	<h2>Qui Sommes <span>Nous</span>?</h2>
 	@include('inc.aboutSection')
 	<div class="btn">
-		<a href="#">Lire Plus <i class="fa-solid fa-circle-arrow-right"></i></a>
+		<a href="/a-propos">Lire Plus <i class="fa-solid fa-circle-arrow-right"></i></a>
 	</div>
 </section>
 @endsection

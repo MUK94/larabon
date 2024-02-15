@@ -21,7 +21,6 @@
 				<div class="video">
 					<video width="620" height="340" controls autoplay>
 						<source src="{{ asset('img/my-video.mp4') }}" type="video/mp4">
-
 						Your browser does not support the video tag.
 					</video>
 				</div>
@@ -37,6 +36,5 @@
 				</p>
 			</div>
 		</div>
-		
 	</div>
 </div>

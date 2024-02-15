@@ -1,0 +1,26 @@
+# 1. Display listings on listings.index
+		# Add images to the model✅
+		# Add Category relationship✅
+		# Finish Card Design Dynamically✅
+		# Design Search bar and later implement search features✅
+		# Finish design of services page✅
+		# Finish About page design		✅
+		# Fix dropdown menu           ✅
+
+
+# 2. Build Detail Page
+# 3. Add edit buttons on detail page
+# 4. Add review form on detail page (Like comments)
+# 5. Add slider images/carousal to visualize more images
+# 6. Add chat option to exchange with vendor/owner/author/publisher on detal page
+
+# 7. List items belonging to that user on Dashboard
+	# Implement Delete and Update
+	#	Display draft post, approved & similar stuff
+	# Add profile settings on Dashboard
+	# CRUD on user profile
+
+# 10. Add chat option to exchange with vendor/owner/author/publisher
+# 11. Add chat option to exchange with vendor/owner/author/publisher
+
+

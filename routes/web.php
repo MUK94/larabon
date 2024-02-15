@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\listingsController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CompetenceController;
+use App\Http\Controllers\ServiceListingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -31,13 +32,20 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/les-services', [listingsController::class, 'index'])->name('listings.index');
+// Backend routes to dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index')->middleware(['auth', 'verified']);
+
+
+Route::get('/services', [ServiceListingsController::class, 'index'])->name('serviceListings.index');
+Route::get('/services/{slug}', [ServiceListingsController::class, 'show'])->name('serviceListings.detail');
+Route::post('/services', [ServiceListingsController::class, 'store'])->middleware(['auth', 'verified']);
+Route::get('/add-service',[ServiceListingsController::class, 'create'])->name('serviceListings.create')->middleware(['auth', 'verified']);
+
+
+Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/a-propos', [PagesController::class, 'about'])->name('pages.about');
 Route::get('/contact', [PagesController::class, 'contact'])->name('pages.contact');
 
-Route::resource('competences', CompetenceController::class)
-	->only(['index', 'store'])
-	->middleware(['auth', 'verified']);
 
 
 require __DIR__.'/auth.php';

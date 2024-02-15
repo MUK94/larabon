@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<title>Bonnafaire | {{ $title }}</title>
+<title>{{ $title }} | Bonnafaire </title>
 @section('content')
 	<div class="listings-container">
 		<div class="contact">
