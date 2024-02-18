@@ -27,7 +27,7 @@
 					<div class="card">
 						<a href="{{ route('serviceListings.detail', ['slug'=>$service->slug]) }}">
 							<div class="image">
-								<img src="{{ asset('storage/cover_images/'.$service->cover_image) }}" alt="" srcset="">
+								<img src="{{ asset('storage/'.$service->cover_image) }}" alt="" srcset="">
 							</div>
 							<div class="detail">
 								<span class="cat"> {{ $service->category->name }}</span>

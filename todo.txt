@@ -21,3 +21,9 @@
 	# CRUD on user profile
 
 
+# 8. Filtering/routing Per Category
+
+# 9. Responsiveness
+
+# 10. User Profile
+	# Views for CRUD

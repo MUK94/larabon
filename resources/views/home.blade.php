@@ -89,7 +89,7 @@
 			<div class="card">
 				<a href="{{ route('serviceListings.detail', ['slug'=>$service->slug]) }}">
 					<div class="image">
-						<img src="{{ asset('storage/cover_images/'.$service->cover_image) }}" alt="" srcset="">
+						<img src="{{ asset('storage/'.$service->cover_image) }}" alt="" srcset="">
 					</div>
 					<div class="detail">
 						<span class="cat"> {{ $service->category->name }}</span>
@@ -104,7 +104,7 @@
 							</div>
 						</div>
 						<div class="price">
-							<button href="#">A partir de <span>{{ $service->price }}</span><span class="currency">FG</span></button>
+							<button href="#">A partir de <span>{{ $service->price }} FG</span></button>
 						</div>
 					</div>
 				</a>

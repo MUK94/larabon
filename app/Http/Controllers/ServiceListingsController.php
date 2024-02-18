@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
 
 class ServiceListingsController extends Controller
 {
@@ -51,13 +52,13 @@ class ServiceListingsController extends Controller
 				'cover_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
 			]);
 
-			$filenameToStore = 'noimage.jpg';
+			// $filenameToStore = 'noimage.jpg';
 
-			if ($request->hasFile('cover_image')) {
-					$file = $request->file('cover_image');
-					$filenameToStore = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '_' . 'service' . time() . '.' . $file->getClientOriginalExtension();
-					$file->storeAs('public/cover_images', $filenameToStore);
-			}
+			// if ($request->hasFile('cover_image')) {
+			// 		$file = $request->file('cover_image');
+			// 		$filenameToStore = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '_' . 'service' . time() . '.' . $file->getClientOriginalExtension();
+			// 		$file->storeAs('public/cover_images', $filenameToStore);
+			// }
 
 			$service = new Service;
 			$service->user_id = auth()->user()->id;
@@ -68,16 +69,24 @@ class ServiceListingsController extends Controller
 			$service->author_bio = $validatedData['author_bio'];
 			$service->address = $validatedData['address'];
 			$service->phone_number = $validatedData['phone_number'];
-
 			$service->category_id = $validatedData['category_id'];
-
-			$service->cover_image = $filenameToStore;
 
 			$service->save();
 
-			return redirect('/services')->with('success', 'Service ajouté avec succès');
+			if ($request->hasFile('cover_image')) {
+				$file = $request->file('cover_image');
+				$imageName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '_' . 'service' . time() . '.' . $file->getClientOriginalExtension();
+
+				Storage::disk('public')->put(
+						$imageName,
+						file_get_contents($request->file('cover_image')->getRealPath())
+				);
+				$service -> cover_image = $imageName;
+				$service -> save();
 		}
 
+			return redirect('/services')->with('success', 'Service ajouté avec succès');
+		}
 
     /**
      * Display the specified resource.

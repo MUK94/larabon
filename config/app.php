@@ -57,7 +57,7 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-		'asset_url' => env('ASSET_URL', 'https://bonnafaire.com/public/'),
+		'asset_url' => env('ASSET_URL'),
 
     /*
     |--------------------------------------------------------------------------
