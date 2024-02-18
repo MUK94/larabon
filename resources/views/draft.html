@@ -408,3 +408,22 @@
 </section>
 
 
+<section id="about" class="myself section">
+	<div class="slider">
+		<div class="categories">
+			@foreach ($categories as $category)
+				<div class="slide">
+					<div class="cat-box">
+						<a href="#">{{ $category->name }}</a>
+					</div>
+				</div>
+			@endforeach
+		</div>
+
+			<!-- silder  buttons and dots -->
+		<button aria-label="none" class="slider__btn slider__btn--left">&larr;</button>
+		<button aria-label="none" class="slider__btn slider__btn--right">&rarr;</button>
+	</div>
+</section>
+
+

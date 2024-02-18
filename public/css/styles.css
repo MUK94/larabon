@@ -492,8 +492,8 @@ footer .container,
 	align-items: center;
 	margin-top: 2rem;
 }
-.about-container .btn a,
-.recommended-container .btn a {
+.btn a,
+.btn a {
 	font-size: 1rem;
 	font-weight: 300;
 	background-color: var(--color1);
@@ -503,8 +503,8 @@ footer .container,
 	color: #f1f1f1;
 
 }
-.about-container .btn a:hover,
-.recommended-container .btn a:hover {
+.btn a:hover,
+.btn a:hover {
 	background-color: #d0d7ff;
 	color: var(--color1);
 }
@@ -526,6 +526,8 @@ footer .container,
 	overflow: hidden;
 }
 
+
+
 .slide {
 	position: absolute;
 	top: 0;
@@ -535,6 +537,7 @@ footer .container,
 	transition: transform 1s;
 	height: 45rem;
 }
+
 
 .slide .box {
 	width: 260px;

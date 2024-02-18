@@ -3,9 +3,11 @@
     --color2: #4fa2f1;
     --color3: #e8eafa;
     --color4: #000101;
-		--color5: #f9fafe;
+		--color5: #ebecf3;
+		--color6: #fafafa;
 
     --font_body: 0.9rem;
+		--article-font: 1.05rem;
 
     --font_icon: 1.3rem;
 		--font-heading-1: 2.2rem;
