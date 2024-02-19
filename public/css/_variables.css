@@ -1,16 +1,17 @@
 :root {
-    --color1: #0d5ac5;
-    --color2: #4fa2f1;
-    --color3: #e8eafa;
-    --color4: #000101;
-		--color5: #ebecf3;
-		--color6: #fafafa;
+	--color1: #0d5ac5;
+	--color2: #4fa2f1;
+	--color3: #e8eafa;
+	--color4: #000101;
+	--color5: #ebecf3;
+	--color6: #fafafa;
+	--color7: #02347a;
 
-    --font_body: 0.9rem;
-		--article-font: 1.05rem;
+	--font_body: 0.9rem;
+	--article-font: 1.05rem;
 
-    --font_icon: 1.3rem;
-		--font-heading-1: 2.2rem;
-		--font-heading-2: 2.5rem;
-		--font-heading-3: 1.1rem;
+	--font_icon: 1.3rem;
+	--font-heading-1: 2.2rem;
+	--font-heading-2: 2.5rem;
+	--font-heading-3: 1.1rem;
 }

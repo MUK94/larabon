@@ -54,20 +54,17 @@
 					</div>
 				</div>
 				<div class="detail-sidebar">
-					<div class="order-btn btn">
-						<a href="#" class="">Ajouter Ce Service</a>
-					</div>
-					<h2>A propos du Vendeur</h2>
-					<div class="bio">
-						<div class="owner">
-							<img src="{{ asset('img/user.png') }}" alt="">
-							<span>{{ $service->user->name }}</span>
+					<div class="owner">
+						<img src="{{ asset('img/user.png') }}" alt="">
+						<div>
+							<h2>{{ $service->user->name }}</h2>
+							<a href="#"><i class="fa-solid fa-location"></i>{{ $service->address }}</a>
 						</div>
-						<p>{{ $service->author_bio }}</p>
 					</div>
+					<p>{{ $service->author_bio }}</p>
 					<div class="contact">
-						<a href="#"><i class="fa-solid fa-phone"></i> Contactez ce Vendeur</a>
-						<a href="#"><i class="fa-solid fa-comment-dots"></i>Envoyez un Message</a>
+						<a href="{{ 'tel:'.$service->phone_number }}"><i class="fa-solid fa-phone"></i>Appelez</a>
+						<a href="#" class="btn"><i class="fa-solid fa-comment-dots"></i>Contact</a>
 					</div>
 				</div>
 			</div>
