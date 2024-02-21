@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar content-layout">
 	<div class="nav-logo">
 			{{-- <img src="{{ asset('img/logo.png') }}" alt="Bonnafaire Logo"> --}}
 			<a href="/" class="logo"><h1>Bonnafaire</h1></a>
@@ -24,10 +24,10 @@
 		{{-- User Auth --}}
 		@auth
 			<div class="nav-user-auth nav-cat-dropdown">
-				<a href="" class="dropdown-link"  onclick="event.preventDefault();">Mon Profil<i class="fa-solid fa-caret-down"></i></a>
+				<a href="" class="dropdown-link"  onclick="event.preventDefault();">{{ explode(" ", auth()->user()->name)[0] }}<i class="fa-solid fa-caret-down"></i></a>
 				<ul class="dropdown-content">
+					<li><a href="/profile">Mon Profil</a></li>
 					<li><a href="/dashboard">Tableau de bord</a></li>
-					<li><a href="/profile">Profil</a></li>
 					<li>
 						<form id="logout-form" method="POST" action="{{ route('logout') }}">
 							@csrf

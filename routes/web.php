@@ -3,7 +3,6 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CompetenceController;
 use App\Http\Controllers\ServiceListingsController;
 use Illuminate\Support\Facades\Route;
 

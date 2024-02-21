@@ -5,7 +5,7 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<meta name="csrf-token" content="{{ csrf_token() }}">
 
-			<title>{{ config('app.name', 'Bonnafaire') }} - </title>
+			<title>Accueil | {{ config('app.name', 'Bonnafaire') }}</title>
 
 			{{-- Tailwind --}}
 			<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -26,6 +26,7 @@
 			<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 			<link rel="stylesheet" href="{{ asset('css/detail.css') }}">
 			<link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 
 
 	</head>
@@ -38,7 +39,7 @@
 		</main>
 			<!-- Footer -->
 	<footer class="footer">
-		<div class="container ">
+		<div class="container content-layout">
 			<div class="raw">
 				<div class="col">
 					<div class="box">
@@ -52,7 +53,7 @@
 					</div>
 				</div>
 				<div class="col ">
-					<h3>Categories</h3>
+					<h3>Catégories</h3>
 					<ul class="box">
 						@foreach ($categories as $category)
 							<li><a href="#">{{ $category->name }}</a></li>
@@ -80,7 +81,7 @@
 				</div>
 			</div>
 			</div>
-		<div class="container">
+		<div class="container content-layout">
 			<div class="copyright">
 				<div class="text">
 					© 2024 Bonnafaire All Rights Reserved

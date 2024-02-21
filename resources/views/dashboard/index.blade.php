@@ -1,9 +1,93 @@
 @extends('layouts.app')
 <title>{{ $title }} | Bonnafaire </title>
 @section('content')
-<div class="listings-container ">
-	<h1 class="mb-12 mt-12">Tableau de bord</h1>
-	<p class="mb-12">Vous etes connecte!</p>
+<div class="content-layout">
+	<div class="dashboard-container">
+		{{-- <div class="title"><h2>Tableau de Bord</h2></div> --}}
+		<div class="raw">
+			<div class="sidemenu">
+				<div class="user">
+					<img src="{{ asset('img/user.png') }}" alt="{{ auth()->user()->name }}">
+					<h2>{{ explode(" ", auth()->user()->name)[0] }}</h2>
+				</div>
+				<ul class="lists">
+					<li><a href="#"><i class="fa-solid fa-suitcase"></i> Services</a></li>
+					<li><a href="#"><i class="fa-solid fa-user"></i> Clients</a></li>
+					<li><a href="#"><i class="fa-solid fa-gear"></i> Paramètres</a></li>
+					<li><a href="#"><i class="fa-solid fa-bell"></i> Notifications</a></li>
+				</ul>
+			</div>
+			<div class="container">
+				<h2>Bienvenu <span>{{ auth()->user()->name }}</span></h2>
+
+				<div class="statistics">
+					<div class="box">
+						<div>
+							<i class="fa-solid fa-suitcase"></i>
+							<h3>Services</h3>
+						</div>
+						<p>777356</p>
+					</div>
+					<div class="box">
+						<div>
+							<i class="fa-solid fa-user"></i>
+							<h3>Clients</h3>
+						</div>
+						<p>56</p>
+					</div>
+					<div class="box">
+						<div>
+							<i class="fa-solid fa-gear"></i>
+							<h3>Paramètres</h3>
+						</div>
+						<p>1</p>
+					</div>
+					<div class="box">
+						<div>
+							<i class="fa-solid fa-bell"></i>
+							<h3>Notifications</h3>
+						</div>
+						<p>12</p>
+					</div>
+				</div>
+
+				{{-- Table --}}
+				<div class="table-container">
+					<h2>Services <span>Admin</span></h2>
+					<table class="min-w-full bg-white rounded-lg">
+            <thead class="bg-gray-800 text-white">
+                <tr >
+                    <th class="px-4 py-2  text-white">ID</th>
+                    <th class="px-4 py-2  text-white">Title</th>
+                    <th class="px-4 py-2  text-white">Edit</th>
+                    <th class="px-4 py-2  text-white">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($services as $service)
+								<tr>
+									<td class="border px-4 py-2">{{ $service->id }}</td>
+									<td class="border px-4 py-2">{{ $service->title }}</td>
+									<td class="border px-4 py-2">
+											<a href="" class="text-blue-600 hover:text-blue-900">Edit</a>
+									</td>
+									<td class="border px-4 py-2">
+											<form action="" method="POST">
+													@csrf
+													@method('DELETE')
+													<button type="submit" class="text-red-600 hover:text-red-900">Delete</button>
+											</form>
+									</td>
+							</tr>
+								@endforeach
+                <!-- Add more rows for other services -->
+            </tbody>
+        </table>
+				</div>
+			</div>
+
+		</div>
+	</div>
 </div>
 
 @endsection

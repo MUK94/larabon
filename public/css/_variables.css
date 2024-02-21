@@ -1,10 +1,11 @@
 :root {
-	--color1: #0d5ac5;
+	/* --color1: #0d5ac5; */
+	--color1: #1800D4;
 	--color2: #4fa2f1;
 	--color3: #e8eafa;
 	--color4: #000101;
 	--color5: #ebecf3;
-	--color6: #fafafa;
+	--color6: #fffaff;
 	--color7: #02347a;
 
 	--font_body: 0.9rem;

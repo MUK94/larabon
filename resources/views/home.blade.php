@@ -2,7 +2,7 @@
 <title>{{ $title }} | Bonnafaire </title>
 @section('content')
 <section class="banner-section">
-	<div class="banner">
+	<div class="content-layout banner">
 		<div class="left">
 			<h1>Des <span>Travailleurs Qualifiés</span> et des Annonces Pertinantes pour tous vos <span>Besoins</span></h1>
 			<div class="search">
@@ -31,7 +31,7 @@
 		</div>
 	</div>
 </section>
-<section class="bonnafaire-container">
+<section class="bonnafaire-container content-layout">
 	<div class="title">
 		<h2>Pourquoi <span>Bonnafaire?</span></h2>
 		<p>Il n'a jamais été facile de trouver le professionnel approprié pour accomplir votre travail</p>
@@ -60,8 +60,10 @@
 	</div>
 </section>
 <section class="why-container">
-	<div class="slogan-container">
-		<h2>Bonnafaire! la seule <span>Platforme de Rencontre</span> </h2>
+	<div class="slogan-container content-layout">
+		<div class="title">
+			<h2>Bonnafaire! la seule <span>Platforme de Rencontre</span> </h2>
+		</div>
 	<p>
 		Où <span>professionnels</span> vendent leurs talents, les clients accomplissent
 			leurs projets <br> et les <span>entreprises</span> font la publicité de leurs activités !
@@ -82,8 +84,8 @@
 	</div>
 	</div>
 </section>
-<section class="recommended-container">
-	<h2>Les plus <span>Recommandés</span></h2>
+<section class="recommended-container content-layout">
+	<div class="title"><h2>Les plus <span>Recommandés</span></h2></div>
 	<div class="container">
 		@foreach ($services as $service)
 			<div class="card">
@@ -117,8 +119,8 @@
 		<a href="/services">Voir Plus <i class="fa-solid fa-circle-arrow-right"></i></a>
 	</div>
 </section>
-<section class="category-container">
-	<h2>Naviguez par <span>Catégorie</span></h2>
+<section class="category-container content-layout">
+	<div class="title"><h2>Naviguez par <span>Catégorie</span></h2></div>
 	<div class="container">
 		<a href="#" class="box">
 			<i class="fa-regular fa-building"></i>
@@ -206,8 +208,8 @@
 		</a>
 	</div>
 </section>
-<section class="about-container">
-	<h2>Qui Sommes <span>Nous</span>?</h2>
+<section class="about-container content-layout">
+	<div class="title"><h2>Qui Sommes <span>Nous</span>?</h2></div>
 	@include('inc.aboutSection')
 	<div class="btn">
 		<a href="/a-propos">Lire Plus <i class="fa-solid fa-circle-arrow-right"></i></a>

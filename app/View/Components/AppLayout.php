@@ -14,8 +14,9 @@ class AppLayout extends Component
      */
     public function render(): View
     {
+			$title = 'Profile';
 			$services = Service::with('user')->latest()->get();
 			$categories = Category::all();
-      return view('layouts.app')->with(['services'=>$services, 'categories'=>$categories]);
+      return view('layouts.app')->with(['title'=>$title, 'services'=>$services, 'categories'=>$categories]);
     }
 }

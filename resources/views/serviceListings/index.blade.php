@@ -1,8 +1,8 @@
 @extends('layouts.app')
 <title>{{ $title }} | Bonnafaire </title>
 @section('content')
-	<div class="recommended-container">
-		<h2>Tous les Services </h2>
+	<div class="recommended-container content-layout">
+		<div class="title"><h2>Tous les Services </h2></div>
 		<div class="searchBar">
 			<div class="search">
 				<form action="/search" method="GET">
@@ -50,5 +50,4 @@
         @endforeach
     </div>
 </div>
-
 @endsection

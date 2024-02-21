@@ -18,11 +18,12 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+			$title = 'Profile';
 			$services = Service::with('user')->latest()->get();
 			$categories = Category::all();
         return view('profile.edit', [
             'user' => $request->user(),
-        ])->with(['services'=>$services, 'categories'=>$categories]);
+        ])->with(['title'=>$title, 'services'=>$services, 'categories'=>$categories]);
     }
 
     /**

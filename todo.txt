@@ -17,8 +17,8 @@
 
 # 4. User Dashboard Design
 		list services
-		user profile
-		settings
+		user profile ✅
+		settings ✅
 		Add edit/Delete
 
 	Statistics
