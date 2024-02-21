@@ -28,7 +28,14 @@
 				<ul class="dropdown-content">
 					<li><a href="/dashboard">Tableau de bord</a></li>
 					<li><a href="/profile">Profil</a></li>
-					<li><a href="#">Déconnexion</a></li>
+					<li>
+						<form id="logout-form" method="POST" action="{{ route('logout') }}">
+							@csrf
+							<button type="submit" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+									{{ __('Déconnexion') }}
+							</button>
+						</form>
+					</li>
 				</ul>
 			</div>
 		@endauth

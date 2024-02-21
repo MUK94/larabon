@@ -9,9 +9,22 @@
 
 
 # 2. Build Detail Page
-# 3. Add edit buttons on detail page
-# 4. Add review form on detail page (Like comments)
-# 5. Add slider images/carousal to visualize more images
+	# Add review form on detail page (Like comments)
+	# Add slider images/carousal to visualize more images ✅
+			(Model to be updated)
+
+# 3. Logout link ✅
+
+# 4. User Dashboard Design
+		list services
+		user profile
+		settings
+		Add edit/Delete
+
+	Statistics
+
+
+
 # 6. Add chat option to exchange with vendor/owner/author/publisher on detal page
 
 # 7. List items belonging to that user on Dashboard

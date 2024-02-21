@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<title>{{ $title }} | Bonnafaire </title>
+	<title>{{ $title }} | Bonnafaire </title>
 @section('content')
 	<div class="listings-container">
 		<div class="detail-container">
@@ -14,11 +14,11 @@
 				<div class="detail-col">
 					<h2>{{ $service->title }}</h2>
 					<div class="info">
-						<div class="review">
-							<i class="fa-solid fa-star"></i><span> 5.0 (9 reviews)</span>
-						</div>
 						<div class="price btn">
 							<a href="#" class="">A partir de {{ $service->price }} FG</a>
+						</div>
+						<div class="review">
+							<i class="fa-solid fa-star"></i><span> 5.0 (9 reviews)</span>
 						</div>
 					</div>
 					<div class="image-box">
@@ -49,9 +49,7 @@
 					<div class="review-container">
 						<h2>Form for reviews</h2>
 					</div>
-					<div class="similar-services">
-						<h2>Similar Services</h2>
-					</div>
+
 				</div>
 				<div class="detail-sidebar">
 					<div class="owner">
@@ -64,9 +62,12 @@
 					<p>{{ $service->author_bio }}</p>
 					<div class="contact">
 						<a href="{{ 'tel:'.$service->phone_number }}"><i class="fa-solid fa-phone"></i>Appelez</a>
-						<a href="#" class="btn"><i class="fa-solid fa-comment-dots"></i>Contact</a>
+						<a href="#" class="btn"><i class="fa-solid fa-comment-dots"></i>Contactez</a>
 					</div>
 				</div>
+			</div>
+			<div class="similar-services">
+				<h2>Similar Services</h2>
 			</div>
 		</div>
 	</div>

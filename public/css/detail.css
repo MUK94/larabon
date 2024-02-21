@@ -94,10 +94,14 @@
 	align-items: center;
 }
 .detail-sidebar .owner img {
-	width: 65px;
-	height: 55px;
+	width: 85px;
+	height: 75px;
 	border-radius: 50%;
 	margin-bottom: 0.75rem;
+}
+.detail-sidebar .owner i {
+	color: var(--color1);
+	margin-right: 0.25rem;
 }
 .detail-sidebar p {
 	padding: 0.5rem;

@@ -4,6 +4,8 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
+use App\Models\Service;
+use App\Models\Category;
 
 class AppLayout extends Component
 {
@@ -12,6 +14,8 @@ class AppLayout extends Component
      */
     public function render(): View
     {
-        return view('layouts.app');
+			$services = Service::with('user')->latest()->get();
+			$categories = Category::all();
+      return view('layouts.app')->with(['services'=>$services, 'categories'=>$categories]);
     }
 }

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Service;
+use App\Models\Category;
 
 class ProfileController extends Controller
 {
@@ -16,9 +18,11 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+			$services = Service::with('user')->latest()->get();
+			$categories = Category::all();
         return view('profile.edit', [
             'user' => $request->user(),
-        ]);
+        ])->with(['services'=>$services, 'categories'=>$categories]);
     }
 
     /**
