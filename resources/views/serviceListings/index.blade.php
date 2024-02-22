@@ -30,12 +30,12 @@
 								<img src="{{ asset('storage/'.$service->cover_image) }}" alt="" srcset="">
 							</div>
 							<div class="detail">
-								<span class="cat"> {{ $service->category->name }}</span>
+								<a href="/categories/{{ $service->category->slug }}"><span class="cat"> {{ $service->category->name }}</span></a>
 								<h4>{{ $service->title }}</h4>
 								<div class="raw">
 									<div class="owner">
 										<img src="{{ asset('img/user.png') }}" alt="">
-										<span>{{ $service->user->name }}</span>
+										<span>{{ explode(" ", $service->user->name)[0] }}</span>
 									</div>
 									<div class="review">
 										<i class="fa-solid fa-star"></i><span> 5.0 (9 reviews)</span>

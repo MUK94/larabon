@@ -64,7 +64,8 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach ($services as $service)
+							@if ($services->count() > 0)
+								@foreach ($services as $service)
 								<tr>
 									<td class="border px-4 py-2">{{ $service->id }}</td>
 									<td class="border px-4 py-2">{{ $service->title }}</td>
@@ -79,8 +80,11 @@
 										</form>
 									</td>
 								</tr>
-										@endforeach
-							<!-- Add more rows for other services -->
+								@endforeach
+
+							@else
+								<p class="mb-4">Vous n'avez pas encore publié de service.</p>
+							@endif
 						</tbody>
         			</table>
 				</div>

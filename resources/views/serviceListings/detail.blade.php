@@ -6,7 +6,7 @@
 			<div class="categories">
 				@foreach ($categories as $category)
 					<div class="cat-box">
-						<a href="#">{{ $category->name }}</a>
+						<a href="/categories/{{ $category->slug }}">{{ $category->name }}</a>
 					</div>
 				@endforeach
 			</div>

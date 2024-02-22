@@ -15,9 +15,9 @@ class DashboardController extends Controller
     public function index():View
     {
 			$title = 'Dashboard';
-			$services = Service::all();
+			$services = Service::where('user_id', auth()->id())->get();;
 			$categories = Category::all();
-      return view('dashboard.index')->with(['title'=>$title, 'services'=>$services, 'categories'=>$categories]);
+      	return view('dashboard.index')->with(['title'=>$title, 'services'=>$services, 'categories'=>$categories]);
     }
 
     /**

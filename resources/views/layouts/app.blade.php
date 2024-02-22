@@ -56,7 +56,7 @@
 					<h3>Catégories</h3>
 					<ul class="box">
 						@foreach ($categories as $category)
-							<li><a href="#">{{ $category->name }}</a></li>
+							<li><a href="/categories/{{ $category->slug }}">{{ $category->name }}</a></li>
 						@endforeach
 					</ul>
 				</div>

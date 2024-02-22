@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Service;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -13,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-      return view();
+		$title = "Services";
+		$services = Service::with('user')->latest()->get();
+		$categories = Category::all();
     }
 
     /**

@@ -18,7 +18,7 @@ class PagesController extends Controller
 			$title = 'Accueil';
 			$services = Service::all();
 			$categories = Category::all();
-      return view('home')->with(['title' => $title, 'services' => $services, 'categories' => $categories]);
+      	return view('home')->with(['title' => $title, 'services' => $services, 'categories' => $categories]);
     }
 
     public function about(): View
@@ -26,7 +26,7 @@ class PagesController extends Controller
 			$title = 'A Propos';
 			$services = Service::all();
 			$categories = Category::all();
-      return view('pages.about')->with(['title' => $title, 'services' => $services, 'categories' => $categories]);
+      	return view('pages.about')->with(['title' => $title, 'services' => $services, 'categories' => $categories]);
     }
 
 		public function contact(): View

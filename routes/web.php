@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceListingsController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,17 @@ Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/a-propos', [PagesController::class, 'about'])->name('pages.about');
 Route::get('/contact', [PagesController::class, 'contact'])->name('pages.contact');
 
+// Category routes
+Route::get('/categories/{category:slug}', function(Category $category) {
+	return view('serviceListings.index', [
+		'services'=> $category->services,
+		'title' => $category->name,
+		'categories' =>Category::all(),
+	]);
+});
 
+// CRUD on Category
+Route::resource('admin/category', CategoryController::class)
+	->only(['index', 'store', 'update', 'destroy']);
 
 require __DIR__.'/auth.php';

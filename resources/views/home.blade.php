@@ -94,12 +94,12 @@
 						<img src="{{ asset('storage/'.$service->cover_image) }}" alt="" srcset="">
 					</div>
 					<div class="detail">
-						<span class="cat"> {{ $service->category->name }}</span>
+						<a href="/categories/{{ $service->category->slug }}"><span class="cat"> {{ $service->category->name }}</span></a>
 						<h4>{{ $service->title }}</h4>
 						<div class="raw">
 							<div class="owner">
 								<img src="{{ asset('img/user.png') }}" alt="">
-								<span>{{ $service->user->name }}</span>
+								<span>{{ explode(" ", $service->user->name)[0] }}</span>
 							</div>
 							<div class="review">
 								<i class="fa-solid fa-star"></i><span> 5.0 (9 reviews)</span>
@@ -122,14 +122,16 @@
 <section class="category-container content-layout">
 	<div class="title"><h2>Naviguez par <span>Catégorie</span></h2></div>
 	<div class="container">
-		<a href="#" class="box">
-			<i class="fa-regular fa-building"></i>
-			<span>8 services</span>
-			<h3>Immobilier</h3>
-			<p>Appartement, Villa & Hotel.
-			</p>
-		</a>
-		<a href="#" class="box">
+		@foreach ($categories as $category)
+			<a href="#" class="box">
+				<i class="fa-regular fa-building"></i>
+				<span>8 services</span>
+				<h3>{{ $category->name }}</h3>
+				<p>Appartement, Villa & Hotel.
+				</p>
+			</a>
+		@endforeach
+		{{-- <a href="#" class="box">
 			<i class="fa-solid fa-book"></i>
 			<span>8 services</span>
 			<h3>Education</h3>
@@ -205,7 +207,7 @@
 			<h3>Autres</h3>
 			<p>Autre Service de la vie quotidienne.
 			</p>
-		</a>
+		</a> --}}
 	</div>
 </section>
 <section class="about-container content-layout">

@@ -15,11 +15,11 @@
 
 # 3. Logout link ✅
 
-# 4. User Dashboard Design
-		list services
+# 4. User Dashboard Design✅
+		list services✅
 		user profile ✅
 		settings ✅
-		Add edit/Delete
+		Add edit/Delete✅
 
 	Statistics
 
@@ -27,16 +27,15 @@
 
 # 6. Add chat option to exchange with vendor/owner/author/publisher on detal page
 
-# 7. List items belonging to that user on Dashboard
-	# Implement Delete and Update
+# 7. List items belonging to that user on Dashboard ✅
+	# Implement Delete and Update ✅
 	#	Display draft post, approved & similar stuff
-	# Add profile settings on Dashboard
-	# CRUD on user profile
+	# Add profile settings on Dashboard ✅
+	# CRUD on user profile ✅
 
 
-# 8. Filtering/routing Per Category
+# 8. Filtering/routing Per Category ✅ (modify the model to use slug instead)
 
 # 9. Responsiveness
 
-# 10. User Profile
-	# Views for CRUD
+# 10. Admin Panel for Admins

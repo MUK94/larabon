@@ -14,7 +14,7 @@
 	flex: 2;
 	background-color: var(--color6);
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-	border-radius: 1rem;
+	border-radius: 1rem 0 0 1rem;
 }
 
 .dashboard-container .raw .sidemenu .user {
@@ -33,7 +33,7 @@
 
 .dashboard-container .raw .sidemenu .lists li i{
 	color: var(--color1);
-	font-size: 1.4rem;
+	font-size: 1rem;
 	margin-right: 0.5rem;
 }
 
@@ -47,10 +47,10 @@
 
 .dashboard-container .raw .sidemenu .lists li:hover{
 	color: var(--color1);
-	border-bottom: 1px solid var(--color1);
+	border-bottom: 1px solid #888;
 }
 .dashboard-container .raw .container {
-	flex: 10;
+	flex: 12;
 	padding: 1rem 2rem;
 }
 
