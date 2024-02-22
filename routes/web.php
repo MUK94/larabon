@@ -3,6 +3,8 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\ServiceListingsController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Category;
@@ -54,6 +56,13 @@ Route::get('/categories/{category:slug}', function(Category $category) {
 
 // CRUD on Category
 Route::resource('admin/category', CategoryController::class)
-	->only(['index', 'store', 'update', 'destroy']);
+	->only(['index', 'store', 'edit', 'update', 'destroy'])
+	->middleware(['auth', 'verified']);
+
+
+
+// Admin routes
+Route::get('/admin', [AdminPanelController::class, 'index'])->name('layouts.admin');
+
 
 require __DIR__.'/auth.php';
