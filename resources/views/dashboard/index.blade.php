@@ -13,7 +13,7 @@
 				<ul class="lists">
 					<li><a href="#"><i class="fa-solid fa-suitcase"></i> Services</a></li>
 					<li><a href="#"><i class="fa-solid fa-user"></i> Clients</a></li>
-					<li><a href="#"><i class="fa-solid fa-gear"></i> Paramètres</a></li>
+					<li><a href="/profile"><i class="fa-solid fa-gear"></i> Paramètres</a></li>
 					<li><a href="#"><i class="fa-solid fa-bell"></i> Notifications</a></li>
 				</ul>
 			</div>
@@ -24,30 +24,30 @@
 					<div class="box">
 						<div>
 							<i class="fa-solid fa-suitcase"></i>
-							<h3>Services</h3>
+							<p>Services</p>
 						</div>
-						<p>777356</p>
+						<h3>{{ $services->count() }}</h3>
 					</div>
 					<div class="box">
 						<div>
 							<i class="fa-solid fa-user"></i>
-							<h3>Clients</h3>
+							<p>Clients</p>
 						</div>
-						<p>56</p>
+						<h3>56</h3>
 					</div>
 					<div class="box">
 						<div>
 							<i class="fa-solid fa-gear"></i>
-							<h3>Paramètres</h3>
+							<p><a href="/profile">Paramètres</a></p>
 						</div>
-						<p>1</p>
+						<h3>1</h3>
 					</div>
 					<div class="box">
 						<div>
 							<i class="fa-solid fa-bell"></i>
-							<h3>Notifications</h3>
+							<p>Notifications</p>
 						</div>
-						<p>12</p>
+						<h3>12</h3>
 					</div>
 				</div>
 
@@ -55,34 +55,34 @@
 				<div class="table-container">
 					<h2>Services <span>Admin</span></h2>
 					<table class="min-w-full bg-white rounded-lg">
-            <thead class="bg-gray-800 text-white">
-                <tr >
-                    <th class="px-4 py-2  text-white">ID</th>
-                    <th class="px-4 py-2  text-white">Title</th>
-                    <th class="px-4 py-2  text-white">Edit</th>
-                    <th class="px-4 py-2  text-white">Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($services as $service)
+						<thead class="bg-gray-800 text-white">
+							<tr >
+								<th class="px-4 py-2  text-white">ID</th>
+								<th class="px-4 py-2  text-white">Title</th>
+								<th class="px-4 py-2  text-white">Edit</th>
+								<th class="px-4 py-2  text-white">Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach ($services as $service)
 								<tr>
 									<td class="border px-4 py-2">{{ $service->id }}</td>
 									<td class="border px-4 py-2">{{ $service->title }}</td>
 									<td class="border px-4 py-2">
-											<a href="" class="text-blue-600 hover:text-blue-900">Edit</a>
+											<a href="{{ route('services.edit', $service) }}" class="text-blue-600 hover:text-blue-900">Edit</a>
 									</td>
 									<td class="border px-4 py-2">
-											<form action="" method="POST">
-													@csrf
-													@method('DELETE')
-													<button type="submit" class="text-red-600 hover:text-red-900">Delete</button>
-											</form>
+										<form action="{{ route('services.destroy', $service) }}" method="POST">
+												@csrf
+												@method('DELETE')
+												<button type="submit" class="text-red-600 hover:text-red-900">Delete</button>
+										</form>
 									</td>
-							</tr>
-								@endforeach
-                <!-- Add more rows for other services -->
-            </tbody>
-        </table>
+								</tr>
+										@endforeach
+							<!-- Add more rows for other services -->
+						</tbody>
+        			</table>
 				</div>
 			</div>
 

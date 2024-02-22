@@ -43,11 +43,11 @@
 
 .dashboard-container .raw .sidemenu .lists li {
 	padding: 0.75rem 0;
-	border-bottom: 1px solid var(--color1);
 }
 
 .dashboard-container .raw .sidemenu .lists li:hover{
 	color: var(--color1);
+	border-bottom: 1px solid var(--color1);
 }
 .dashboard-container .raw .container {
 	flex: 10;
@@ -81,8 +81,8 @@
 	margin-bottom: 1rem;
 }
 
-.dashboard-container .raw .container .statistics .box div h3 {
-	font-size: 1.1rem;
+.dashboard-container .raw .container .statistics .box h3 {
+	font-size: 1.4rem;
 }
 
 .dashboard-container .raw .container .statistics .box div i {

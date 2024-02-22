@@ -10,7 +10,15 @@ class Service extends Model
 {
   use HasFactory;
 
-
+	protected $fillable = [
+		'title',
+		'description',
+		'author_bio',
+		'price',
+		'address',
+		'phone_number',
+		'cover_image',
+	];
 	public function user(): BelongsTo
 	{
 		return $this->belongsTo(User::class);

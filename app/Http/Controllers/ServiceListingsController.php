@@ -17,7 +17,7 @@ class ServiceListingsController extends Controller
      */
     public function index(): View
     {
-      $title = "Tous Les Services";
+      $title = "Services";
 			$services = Service::with('user')->latest()->get();
 			$categories = Category::all();
       return view('serviceListings.index')->with(['services'=>$services, 'title'=>$title, 'categories'=>$categories]);
@@ -38,7 +38,7 @@ class ServiceListingsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+		public function store(Request $request): RedirectResponse
 		{
 			// Validate the incoming request data
 			$validatedData = $request->validate([
@@ -52,13 +52,6 @@ class ServiceListingsController extends Controller
 				'cover_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
 			]);
 
-			// $filenameToStore = 'noimage.jpg';
-
-			// if ($request->hasFile('cover_image')) {
-			// 		$file = $request->file('cover_image');
-			// 		$filenameToStore = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '_' . 'service' . time() . '.' . $file->getClientOriginalExtension();
-			// 		$file->storeAs('public/cover_images', $filenameToStore);
-			// }
 
 			$service = new Service;
 			$service->user_id = auth()->user()->id;
@@ -96,25 +89,70 @@ class ServiceListingsController extends Controller
     {
 
 			$service = Service::where('slug', $slug)->first();
-			$categories = Category::all();
 			$title = $service->title;
+			$categories = Category::all();
 			return view('serviceListings.detail')->with(['service'=>$service, 'categories'=>$categories, 'title'=>$title]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Service $service)
+    public function edit($id): View
     {
-        //
+		 $title = 'Modifier Le Service';
+		 $service = Service::findOrFail($id);
+		 $categories = Category::all();
+		 return view('serviceListings.edit')->with(['service'=>$service, 'categories'=>$categories, 'title'=>$title]);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified resource in storage
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, $id): RedirectResponse
     {
-        //
+
+      	// Validate the incoming request data
+			$validatedData = $request->validate([
+				'title' => 'required|string|max:100',
+				'description' => 'required',
+				'price' => 'required',
+				'author_bio' => 'required',
+				'address' => 'required',
+				'phone_number' => 'required',
+				'category_id' => 'required',
+				'cover_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+			]);
+
+			// $service->update($validatedData);
+
+			$service = Service::findOrFail($id);
+			$service->user_id = auth()->user()->id;
+			$service->title = $validatedData['title'];
+			$service->slug = Str::slug($validatedData['title'], '-');
+			$service->description = $validatedData['description'];
+			$service->price = $validatedData['price'];
+			$service->author_bio = $validatedData['author_bio'];
+			$service->address = $validatedData['address'];
+			$service->phone_number = $validatedData['phone_number'];
+			$service->category_id = $validatedData['category_id'];
+
+			$service->save();
+
+			if ($request->hasFile('cover_image')) {
+				$file = $request->file('cover_image');
+				$imageName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '_' . 'service' . time() . '.' . $file->getClientOriginalExtension();
+
+				Storage::disk('public')->put(
+						$imageName,
+						file_get_contents($request->file('cover_image')->getRealPath())
+				);
+				$service -> cover_image = $imageName;
+				$service -> save();
+		}
+
+			return redirect('/services')->with('success', 'Service ajouté avec succès');
+
+
     }
 
     /**
@@ -122,6 +160,11 @@ class ServiceListingsController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $this->authorize('delete', $service);
+
+		  $service->delete();
+
+			return redirect('/dashboard')->with('success', 'Service supprimé avec succès');
+
     }
 }
