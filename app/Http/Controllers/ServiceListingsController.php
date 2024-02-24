@@ -89,9 +89,10 @@ class ServiceListingsController extends Controller
 	{
 
 		$service = Service::where('slug', $slug)->first();
+		$similar_services = Service::where('category_id', $service->category_id)->where('id', '!=', $service->id)->limit(5)->get();
 		$title = $service->title;
 		$categories = Category::all();
-		return view('serviceListings.detail')->with(['service' => $service, 'categories' => $categories, 'title' => $title]);
+		return view('serviceListings.detail')->with(['service' => $service, 'similar_services' => $similar_services, 'categories' => $categories, 'title' => $title]);
 	}
 
 	/**

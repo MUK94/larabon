@@ -77,10 +77,10 @@
 			<i class="fa-solid fa-graduation-cap"></i>
 			<a href="/add-service" class="skill">Vendre mes Services</a>
 		</div>
-		<div class="box">
+		{{-- <div class="box">
 			<i class="fa-solid fa-bullhorn"></i>
 			<a href="#" class="ads">J'ai une Annonce à Poster</a>
-		</div>
+		</div> --}}
 	</div>
 	</div>
 </section>
@@ -89,13 +89,13 @@
 	<div class="container">
 		@foreach ($services as $service)
 			<div class="card">
-				<a href="{{ route('serviceListings.detail', ['slug'=>$service->slug]) }}">
+				<div>
 					<div class="image">
 						<img src="{{ asset('storage/'.$service->cover_image) }}" alt="" srcset="">
 					</div>
 					<div class="detail">
 						<a href="/categories/{{ $service->category->slug }}"><span class="cat"> {{ $service->category->name }}</span></a>
-						<h4>{{ $service->title }}</h4>
+						<a href="{{ route('serviceListings.detail', ['slug'=>$service->slug]) }}"><h4>{{ $service->title }}</h4></a>
 						<div class="raw">
 							<div class="owner">
 								<img src="{{ asset('img/user.png') }}" alt="">
@@ -109,7 +109,7 @@
 							<button href="#">A partir de <span>{{ $service->price }} FG</span></button>
 						</div>
 					</div>
-				</a>
+				</div>
 			</div>
 		@endforeach
 	</div>
@@ -123,91 +123,17 @@
 	<div class="title"><h2>Naviguez par <span>Catégorie</span></h2></div>
 	<div class="container">
 		@foreach ($categories as $category)
-			<a href="#" class="box">
-				<i class="fa-regular fa-building"></i>
-				<span>8 services</span>
-				<h3>{{ $category->name }}</h3>
-				<p>Appartement, Villa & Hotel.
-				</p>
-			</a>
+			@if ($category->services->count() !== 0)
+				<a href="/categories/{{ $category->slug }}" class="box">
+					<p>
+							<i class="fa-solid fa-hashtag"></i>
+							<span>{{ $category->services->count() }}</span> {{ $category->services->count() == 1 ? 'service' : 'services' }}
+					</p>
+					<h3>{{ $category->name }}</h3>
+				</a>
+			@endif
 		@endforeach
-		{{-- <a href="#" class="box">
-			<i class="fa-solid fa-book"></i>
-			<span>8 services</span>
-			<h3>Education</h3>
-			<p>Professeur, Enseignants & Formateurs.
-			</p>
-		</a>
-		<a href="#" class="box">
-			<i class="fa-solid fa-shower"></i>
-			<span>8 services</span>
-			<h3>Plumbérie</h3>
-			<p>Toilette & Cuisine.
-			</p>
-		</a>
-		<a href="#" class="box">
-			<i class="fa-solid fa-hammer"></i>
-			<span>8 services</span>
-			<h3>Menuiserie</h3>
-			<p>Meubles & Charpente.
-			</p>
-		</a>
-		<a href="#" class="box">
-			<i class="fa-solid fa-paintbrush"></i>
-			<span>8 services</span>
-			<h3>Beauté</h3>
-			<p>Salon de Coiffure & Cosmétique.
-			</p>
-		</a>
-		<a href="#" class="box">
-			<i class="fa-solid fa-utensils"></i>
-			<span>8 services</span>
-			<h3>Restaurant</h3>
-			<p>Cafe, Plat locaux & Internationaux.
-			</p>
-		</a>
-		<a href="#" class="box">
-			<i class="fa-solid fa-code"></i>
-			<span>8 services</span>
-			<h3>Informatique</h3>
-			<p>Développement de Logiciel & Maintenance.
-			</p>
-		</a>
-		<a href="#" class="box">
-			<i class="fa fa-suitcase"></i>
-			<span>8 services</span>
-			<h3>Mecanique</h3>
-			<p>Moto, Voiture & Camion.
-			</p>
-		</a>
-		<a href="#" class="box">
-			<i class="fa-solid fa-person-digging"></i>
-			<span>8 services</span>
-			<h3>Maçonnerie</h3>
-			<p>Maison, Etages, BTP.
-			</p>
-		</a>
-		<a href="#" class="box">
-			<i class="fa fa-suitcase"></i>
-			<span>8 services</span>
-			<h3>Emploi</h3>
-			<p>Local, International & Coaching.
-			</p>
-		</a>
-		<a href="#" class="box">
-			<i class="fa-solid fa-bed"></i>
-			<span>8 services</span>
-			<h3>Travaux ménagers</h3>
-			<p>Nettoyage, Cuisine & Babysitting.
-			</p>
-		</a>
-		<a href="#" class="box">
-			<i class="fa-solid fa-shuffle"></i>
-			<span>8 services</span>
-			<h3>Autres</h3>
-			<p>Autre Service de la vie quotidienne.
-			</p>
-		</a> --}}
+
 	</div>
 </section>
 <section class="about-container content-layout">
