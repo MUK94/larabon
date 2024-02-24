@@ -40,28 +40,25 @@
 				</div>
 			@endforeach
 	  </div>
-
 	  <script>
-			// Add event listener to dropdown buttons
-			const dropdownButtons = document.querySelectorAll('.dropdown-button');
-			dropdownButtons.forEach(button => {
-				 button.addEventListener('click', () => {
+		  // Add event listener to dropdown buttons
+		  const dropdownButtons = document.querySelectorAll('.dropdown-button');
+		  dropdownButtons.forEach(button => {
+				  button.addEventListener('click', () => {
 					  const dropdownMenu = button.nextElementSibling;
 					  dropdownMenu.classList.toggle('hidden');
-				 });
-			});
+				  });
+		  });
 
-			// Close dropdowns when clicking outside
-			document.addEventListener('click', (event) => {
-				 dropdownButtons.forEach(button => {
+		  // Close dropdowns when clicking outside
+		  document.addEventListener('click', (event) => {
+				  dropdownButtons.forEach(button => {
 					  if (!button.contains(event.target)) {
-							const dropdownMenu = button.nextElementSibling;
-							dropdownMenu.classList.add('hidden');
+						  const dropdownMenu = button.nextElementSibling;
+						  dropdownMenu.classList.add('hidden');
 					  }
-				 });
-			});
+				  });
+		  });
 	  </script>
-
-
-	</div>
+</div>
 @endsection

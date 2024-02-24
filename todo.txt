@@ -8,34 +8,50 @@
 		# Fix dropdown menu           ✅
 
 
-# 2. Build Detail Page
-	# Add review form on detail page (Like comments)
-	# Add slider images/carousal to visualize more images ✅
-			(Model to be updated)
+# . Build Detail Page
+		Add review form on detail page (Like comments)
+		Add slider images/carousal to visualize more images ✅
+		(Model to be updated)
+		Form for reviews
+		similar services / Category or Author
 
-# 3. Logout link ✅
+# . Logout link ✅
 
-# 4. User Dashboard Design✅
+# . User Dashboard Design✅
 		list services✅
 		user profile ✅
 		settings ✅
 		Add edit/Delete✅
 
-	Statistics
+		Statistics
 
 
 
-# 6. Add chat option to exchange with vendor/owner/author/publisher on detal page
+# . Add chat option to exchange with vendor/owner/author/publisher on detal page
 
-# 7. List items belonging to that user on Dashboard ✅
-	# Implement Delete and Update ✅
-	#	Display draft post, approved & similar stuff
-	# Add profile settings on Dashboard ✅
-	# CRUD on user profile ✅
+# . List items belonging to that user on Dashboard ✅
+		Implement Delete and Update ✅
+		Display draft post, approved & similar stuff
+		Add profile settings on Dashboard ✅
+		CRUD on user profile ✅
 
 
-# 8. Filtering/routing Per Category ✅ (modify the model to use slug instead)
+# . Filtering/routing Per Category ✅
+		CRUD on Category
 
-# 9. Responsiveness
 
-# 10. Admin Panel for Admins
+
+# . Search functions
+
+# . Admin Panel for Admins
+
+# . Error handling
+# . Refactoring
+
+# . Responsiveness
+# . Testing
+# . documenting
+
+
+
+
