@@ -7,10 +7,12 @@
 		<a href="" class="dropdown-link" onclick="event.preventDefault();"><i class="fas fa-list"></i>Catégories <i class="fa-solid fa-caret-down"></i></a>
 		<ul class="dropdown-content">
 
-			<li><a href="/services">Tout</a></li>
-			@foreach ($categories as $category)
-				<li><a href="/categories/{{ $category->slug }}">{{ $category->name }}</a></li>
-			@endforeach
+			<div class="cat-drop">
+					<li><a href="/services">Tout</a></li>
+					@foreach ($categories as $category)
+						<li><a href="/categories/{{ $category->slug }}">{{ $category->name }}</a></li>
+					@endforeach
+			</div>
 		</ul>
 	</div>
 	<div class="nav-container">
@@ -24,9 +26,10 @@
 		{{-- User Auth --}}
 		@auth
 			<div class="nav-user-auth nav-cat-dropdown">
-				<a href="" class="dropdown-link"  onclick="event.preventDefault();">{{ explode(" ", auth()->user()->name)[0] }}<i class="fa-solid fa-caret-down"></i></a>
+				<a href="" class="dropdown-link"  onclick="event.preventDefault();"><i class="fa-solid fa-user-circle"></i> {{ explode(" ", auth()->user()->name)[0] }}<i class="fa-solid fa-caret-down"></i></a>
 				<ul class="dropdown-content">
-					<li><a href="/profile">Mon Profil</a></li>
+					<div class="drop-user">
+						<li><a href="/profile">Mon Profil</a></li>
 					<li><a href="/dashboard">Tableau de bord</a></li>
 					<li>
 						<form id="logout-form" method="POST" action="{{ route('logout') }}">
@@ -36,6 +39,7 @@
 							</button>
 						</form>
 					</li>
+					</div>
 				</ul>
 			</div>
 		@endauth

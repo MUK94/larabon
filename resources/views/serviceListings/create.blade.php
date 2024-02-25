@@ -1,5 +1,6 @@
 @extends('layouts.app')
 <title>{{ $title }} | Bonnafaire </title>
+
 @section('content')
 
 <div class="flex justify-center items-center flex-col mt-8 mb-12">
@@ -24,7 +25,7 @@
 
 		<div class="mb-4">
 			<label for="description" class="block mb-1">Description</label>
-			<textarea name="description" id="description" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500" required></textarea>
+			<textarea name="description" id="description" class=" w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"></textarea>
 		</div>
 
 		<div class="mb-4">
@@ -54,6 +55,14 @@
 		<button type="submit" class="btn bg-blue-500 px-3 py-3 text-white">Enregistrer</button>
 	</form>
 </div>
+
+<script>
+	ClassicEditor
+		.create( document.querySelector( '#description' ) )
+		.catch( error => {
+			console.error( error );
+		} );
+</script>
 
 
 @endsection

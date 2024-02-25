@@ -38,39 +38,72 @@
 							<div class="dots"></div>
 					</div>
 					<article>
-						{{ $service->description }}
+						{!! $service->description  !!}
 					</article>
-					<div class="review-container">
-						<div class="mx-auto mt-8">
-							<h2 class="text-xl font-semibold mb-4">Reviews</h2>
-							<div class="mb-4">
+					<div class="review-container mt-24">
+						<div class="mx-auto mt-24">
+							<h3 class="text-xl font-semibold mb-4 mt-8">Reviews</h3>
+							<div class="mb-8">
 								 <div class="text-gray-700 italic border-l-4 border-gray-400 pl-4 py-2">
 									  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id eros eu felis vehicula blandit.</p>
 									  <p class="text-gray-500 text-sm mt-2">Par: John Doe</p>
 								 </div>
 							</div>
-							<div class="mb-4">
+							<div class="mb-8">
 								 <div class="text-gray-700 italic border-l-4 border-gray-400 pl-4 py-2">
 									  <p>Vestibulum aliquam feugiat mauris, sit amet volutpat urna. Fusce non erat vitae eros ultricies accumsan.</p>
 									  <p class="text-gray-500 text-sm mt-2">Par: Jane Doe</p>
 								 </div>
 							</div>
-							<p class="text-gray-700">No reviews posted yet.</p>
+							{{-- <p class="text-gray-700">No reviews posted yet.</p> --}}
 					  </div>
 
-					  <div class="mx-auto mt-8">
-							<h2 class="text-xl font-semibold mb-4">Soumettre une Review</h2>
+					  <div class="mx-auto mt-16">
+							<h3 class="text-xl font-semibold mb-4 mt-4">Soumettre une Review</h3>
 							<form>
 								 <div class="mb-4">
 									  <label for="review" class="block text-gray-700">Votre Review:</label>
-									  <textarea id="review" name="review" rows="4" class="form-textarea mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200"></textarea>
+									  <textarea id="review" name="review" rows="4" class="form-textarea mt-1 px-2 pt-2 block w-full border-gray-300 rounded-md border focus:border-blue-500"></textarea>
 								 </div>
 								 <button type="submit" class="btn bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Envoyez</button>
 							</form>
 					  </div>
 
 					</div>
-
+					<div class="similar-services recommended-container">
+						<h3 class="text-xl font-semibold mb-4 mt-4">Services Similaires</h3>
+						<div class="container">
+							@if ($similar_services->isEmpty())
+								 <p>No service</p>
+							@else
+								 @foreach ($similar_services as $service)
+									  <div class="card">
+											<div>
+												 <div class="image">
+													  <img src="{{ asset('storage/'.$service->cover_image) }}" alt="" srcset="">
+												 </div>
+												 <div class="detail">
+													  <a href="/categories/{{ $service->category->slug }}"><span class="cat"> {{ $service->category->name }}</span></a>
+													  <h3 class="mt-4 mb-4"><a href="{{ route('serviceListings.detail', ['slug'=>$service->slug]) }}">{{ $service->title }}</a></h3>
+													  <div class="raw">
+															<div class="owner">
+																 <img src="{{ asset('img/user.png') }}" alt="">
+																 <span>{{ explode(" ", $service->user->name)[0] }}</span>
+															</div>
+															<div class="review">
+																 <i class="fa-solid fa-star"></i><span> 5.0 (9 reviews)</span>
+															</div>
+													  </div>
+													  <div class="price">
+															<button href="#">A partir de <span>{{ $service->price }} FG</span></button>
+													  </div>
+												 </div>
+											</div>
+									  </div>
+								 @endforeach
+							@endif
+					  </div>
+					</div>
 				</div>
 				<div class="detail-sidebar">
 					<div class="owner">
@@ -87,41 +120,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="similar-services recommended-container">
-				<div class="title">
-					<h2>Similar Services</h2>
-				</div>
-				<div class="container">
-					@if ($similar_services->isEmpty())
-						 <p>No service</p>
-					@else
-						 @foreach ($similar_services as $service)
-							  <div class="card">
-									<div>
-										 <div class="image">
-											  <img src="{{ asset('storage/'.$service->cover_image) }}" alt="" srcset="">
-										 </div>
-										 <div class="detail">
-											  <a href="/categories/{{ $service->category->slug }}"><span class="cat"> {{ $service->category->name }}</span></a>
-											  <a href="{{ route('serviceListings.detail', ['slug'=>$service->slug]) }}"><h4>{{ $service->title }}</h4></a>
-											  <div class="raw">
-													<div class="owner">
-														 <img src="{{ asset('img/user.png') }}" alt="">
-														 <span>{{ explode(" ", $service->user->name)[0] }}</span>
-													</div>
-													<div class="review">
-														 <i class="fa-solid fa-star"></i><span> 5.0 (9 reviews)</span>
-													</div>
-											  </div>
-											  <div class="price">
-													<button href="#">A partir de <span>{{ $service->price }} FG</span></button>
-											  </div>
-										 </div>
-									</div>
-							  </div>
-						 @endforeach
-					@endif
-			  </div>
+
 			</div>
 		</div>
 	</div>

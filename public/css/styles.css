@@ -52,7 +52,6 @@ header {
 
 
 /* Header Styles */
-
 .navbar {
   height: 60px;
 }
@@ -89,23 +88,44 @@ header {
 	position: absolute;
 	top: calc(100% + 15px); /* Adjust the spacing here */
 	background-color: #f1f1f1;
-	width: 150px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
-	left: -5px;
+	left: -7px;
+	border-radius: .25rem;
+}
+
+.nav-cat-dropdown .dropdown-content .cat-drop {
+	width: 400px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	align-self: center;
+	padding: 1rem 0.75rem;
+}
+.nav-cat-dropdown .dropdown-content .drop-user {
+	width: 160px;
+}
+.nav-cat-dropdown .dropdown-content .cat-drop li a{
+	padding: .5rem;
+
 }
 
 .nav-cat-dropdown .dropdown-content li {
-	padding: 0.75rem 1rem;
-
+	padding: 1rem 1.25rem;
+	color: var(--color4);
+}
+.nav-cat-dropdown .dropdown-content li:hover {
+	background-color: var(--color1);
 }
 .nav-cat-dropdown .dropdown-content li a {
-		color: #111;
+	color: var(--color4);
 }
 
-.nav-cat-dropdown .dropdown-content li a:hover {
-	color: var(--color1);
+.nav-cat-dropdown .dropdown-content li a:hover,
+.nav-cat-dropdown.open .dropdown-content button:hover  {
+	color: var(--color5);
 }
+
 
 .nav-cat-dropdown.open .dropdown-content {
 	display: block;
@@ -155,7 +175,7 @@ header {
 }
 
 .banner .left {
-	width: 70%;
+	width: 65%;
 	margin-right: 0.5rem;
 }
 .banner .left h1{
@@ -176,7 +196,7 @@ header {
 }
 
 .banner .right-banner {
-	width: 30%;
+	width: 35%;
 }
 .banner .right-banner img{
 	max-width:100%;
@@ -608,7 +628,7 @@ header {
 	flex-wrap: wrap;
 }
 .recommended-container .container .card {
-	width: 270px;
+	width: 250px;
 	background-color: var(--color5);
 	border-radius: 0.75rem;
 	margin: 1rem 0.5rem;
@@ -631,10 +651,10 @@ header {
 	/* padding: 0.25rem; */
 	/* background-color: #dfe0ea; */
 }
-.recommended-container .card .detail h4{
-	margin: 0.5rem 0;
-	line-height: 1.3rem;
-	font-size: 0.8rem;
+.recommended-container .card .detail h3{
+	margin: 1rem 0;
+	line-height: 1.4rem;
+	font-size: 1rem;
 }
 .recommended-container .card .detail .raw {
 	display: flex;
@@ -744,5 +764,5 @@ footer .container .copyright .social i:hover {
 /* Services Page */
 
 .recommended-container .searchBar{
-	padding: 0 1rem 2rem;
+	padding: 0 .5rem 2rem;
 }

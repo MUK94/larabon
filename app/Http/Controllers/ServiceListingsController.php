@@ -15,11 +15,17 @@ class ServiceListingsController extends Controller
 	/**
 	 * Display a listing of the resource.
 	 */
-	public function index(): View
+	public function index(Request $request): View
 	{
 		$title = "Services";
 		$services = Service::with('user')->latest()->get();
 		$categories = Category::all();
+
+
+		// Searching
+
+
+
 		return view('serviceListings.index')->with(['services' => $services, 'title' => $title, 'categories' => $categories]);
 
 	}

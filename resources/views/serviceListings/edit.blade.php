@@ -23,7 +23,7 @@
 
 				<div class="mb-4">
 					<label for="description" class="block mb-1">Description</label>
-					<textarea name="description" id="description" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>{{ old('description', $service->description) }} </textarea>
+					<textarea name="description" id="description" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500" >{{ old('description', $service->description) }} </textarea>
 				</div>
 
 				<div class="mb-4">
@@ -42,7 +42,7 @@
 
 				<div class="mb-4">
 						<label for="phone_number" class="block mb-1">Numero de Telephone</label>
-						<input type="tel" name="phone_number" id="phone_number" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500" value="{{ old('phone_number', $service->phone_number) }}" required>
+						<input type="tel" name="phone_number" id="phone_number" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500" value="{{ old('phone_number', $service->phone_number) }}">
 				</div>
 
 				<div class="mb-4">
@@ -53,5 +53,13 @@
 				<button type="submit" class="btn bg-blue-500 px-3 py-3 text-white">Enregistrer</button>
 			</form>
 	</div>
+
+	<script>
+		ClassicEditor
+			.create( document.querySelector( '#description' ) )
+			.catch( error => {
+				console.error( error );
+			} );
+	</script>
 
 @endsection

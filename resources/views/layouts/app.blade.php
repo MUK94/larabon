@@ -11,6 +11,10 @@
 			<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 
+			{{-- Text Editor--}}
+			<script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+
+
 			<!-- Fonts -->
 			{{-- <link rel="preconnect" href="https://fonts.bunny.net">
 			<link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> --}}
@@ -45,7 +49,7 @@
 					<div class="box">
 						<h3>Bonnafaire</h3>
 						<ul class="box">
-							<li>Le meilleur site de mise en relation en <br>République de Guinée.</li>
+							<li class="mb-6">Le meilleur site de mise en relation en <br>République de Guinée.</li>
 							<li><i class="fa-solid fa-phone"></i>+224 621149477</li>
 							<li><i class="fa-solid fa-location-dot"></i>Kipe, Centre Emetteur</li>
 							<li><a href="mailto:contact@bonnafaire.com"><i class="fa-solid fa-envelope"></i>contact@bonnafaire.com</a></li>

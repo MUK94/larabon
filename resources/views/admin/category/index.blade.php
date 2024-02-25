@@ -29,11 +29,11 @@
 						<ul class="dropdown-menu absolute hidden bg-white border border-gray-200 py-1 rounded-md shadow-lg right-10 top-8">
 							<li><a href="{{ route('category.edit', $category) }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Edit</a></li>
 							<li>
-									<form action="{{ route('category.destroy', $category) }}" method="POST" class="inline">
-										@csrf
-										@method('DELETE')
-										<button type="submit" class="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200">Delete</button>
-									</form>
+								<form action="{{ route('category.destroy', $category) }}" method="POST" class="inline">
+									@csrf
+									@method('DELETE')
+									<button type="submit" class="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200">Delete</button>
+								</form>
 							</li>
 						</ul>
 					</div>
