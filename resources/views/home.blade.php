@@ -51,7 +51,7 @@
 					</div>
 					<div class="detail">
 						<a href="/categories/{{ $service->category->slug }}"><span class="cat"> {{ $service->category->name }}</span></a>
-						<a href="{{ route('serviceListings.detail', ['slug'=>$service->slug]) }}"><h4>{{ $service->title }}</h4></a>
+						<h3><a href="{{ route('serviceListings.detail', ['slug'=>$service->slug]) }}">{{ $service->title }}</a></h3>
 						<div class="raw">
 							<div class="owner">
 								<img src="{{ asset('img/user.png') }}" alt="">

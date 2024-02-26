@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-	<div class="content-layout">
+	<div class="">
 		<h2 class="text-center text-2xl mb-8 mt-8">{{ $title }}</h2>
 		<div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
 			 <form method="POST" action="{{ route('category.store') }}">

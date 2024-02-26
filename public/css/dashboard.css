@@ -11,7 +11,7 @@
 
 .dashboard-container .raw .sidemenu {
 	height: 100vh;
-	flex: 2;
+	flex: 2.5;
 	background-color: var(--color6);
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 	border-radius: 1rem 0 0 1rem;
@@ -38,7 +38,7 @@
 }
 
 .dashboard-container .raw .sidemenu .lists {
-	padding: 1rem .5rem;
+	padding: 1rem .75rem;
 }
 
 .dashboard-container .raw .sidemenu .lists li {
@@ -50,7 +50,7 @@
 	border-bottom: 1px solid #888;
 }
 .dashboard-container .raw .container {
-	flex: 12;
+	flex: 9.5;
 	padding: 1rem 2rem;
 }
 
