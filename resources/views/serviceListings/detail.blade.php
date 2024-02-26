@@ -43,18 +43,28 @@
 					<div class="review-container mt-24">
 						<div class="mx-auto mt-24">
 							<h3 class="text-xl font-semibold mb-4 mt-8">Reviews</h3>
-							<div class="mb-8">
-								 <div class="text-gray-700 italic border-l-4 border-gray-400 pl-4 py-2">
-									  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id eros eu felis vehicula blandit.</p>
-									  <p class="text-gray-500 text-sm mt-2">Par: John Doe</p>
-								 </div>
-							</div>
-							<div class="mb-8">
-								 <div class="text-gray-700 italic border-l-4 border-gray-400 pl-4 py-2">
-									  <p>Vestibulum aliquam feugiat mauris, sit amet volutpat urna. Fusce non erat vitae eros ultricies accumsan.</p>
-									  <p class="text-gray-500 text-sm mt-2">Par: Jane Doe</p>
-								 </div>
-							</div>
+							<div class="category-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+									<div class="relative flex items-center bg-white rounded-lg shadow-md p-4 mb-12">
+										<div class="text-lg">
+											<a href=""></a>
+										</div>
+										<div class="ml-auto">
+											<button class="dropdown-button bg-gray-200 text-gray-700 px-3 py-2 rounded-full hover:bg-gray-300 focus:outline-none focus:bg-gray-300">
+												<i class="fas fa-ellipsis-v"></i>
+											</button>
+											<ul class="dropdown-menu absolute hidden bg-white border border-gray-200 py-1 rounded-md shadow-lg right-10 top-8">
+												<li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Edit</a></li>
+												<li>
+													<form action="" method="POST" class="inline">
+														@csrf
+														@method('DELETE')
+														<button type="submit" class="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200">Delete</button>
+													</form>
+												</li>
+											</ul>
+										</div>
+									</div>
+						  </div>
 							{{-- <p class="text-gray-700">No reviews posted yet.</p> --}}
 					  </div>
 
@@ -124,4 +134,7 @@
 			</div>
 		</div>
 	</div>
+
+
+
 @endsection
