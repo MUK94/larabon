@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 <title>{{ $title }} | Bonnafaire </title>
 
@@ -17,8 +18,9 @@
 						</div>
 						<div class="detail">
 
+
 							<a href="/categories/{{ $service->slug }}"><span class="cat"> {{ $service->category }}</span></a>
-							<h3><a href="{{ route('serviceListings.detail', ['slug'=>$service->slug]) }}">{{ $service->title }}</a></h3>
+							<h3><a href="{{ route('serviceListings.detail', ['slug'=>$service->title_slug]) }}">{{ $service->title }}</a></h3>
 							<div class="raw">
 								<div class="owner">
 									<img src="{{ asset('img/user.png') }}" alt="">
