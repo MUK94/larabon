@@ -43,28 +43,37 @@
 					<div class="review-container mt-24">
 						<div class="mx-auto mt-24">
 							<h3 class="text-xl font-semibold mb-4 mt-8">Reviews</h3>
-							<div class="category-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-									<div class="relative flex items-center bg-white rounded-lg shadow-md p-4 mb-12">
-										<div class="text-lg">
-											<a href=""></a>
-										</div>
-										<div class="ml-auto">
-											<button class="dropdown-button bg-gray-200 text-gray-700 px-3 py-2 rounded-full hover:bg-gray-300 focus:outline-none focus:bg-gray-300">
-												<i class="fas fa-ellipsis-v"></i>
-											</button>
-											<ul class="dropdown-menu absolute hidden bg-white border border-gray-200 py-1 rounded-md shadow-lg right-10 top-8">
-												<li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Edit</a></li>
-												<li>
-													<form action="" method="POST" class="inline">
-														@csrf
-														@method('DELETE')
-														<button type="submit" class="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200">Delete</button>
-													</form>
-												</li>
-											</ul>
+							<div class="bg-white rounded-lg shadow-md p-2 mb-12">
+								<div class="relative flex items-center ">
+									<div class="text-lg review">
+										<div class="user ">
+											<img src="{{ asset('img/user.png') }}" alt="{{ auth()->user()->name }}">
+											<span>{{ explode(" ", auth()->user()->name)[0] }}</span>
 										</div>
 									</div>
+									<div class="ml-auto">
+										<button class="dropdown-button text-gray-700 px-3 py-2 rounded-full hover:bg-gray-300 focus:outline-none">
+											<i class="fas fa-ellipsis-v"></i>
+										</button>
+										<ul class="dropdown-menu absolute hidden bg-white border border-gray-200 py-1 rounded-md shadow-lg right-10 top-8">
+											<li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Edit</a></li>
+											<li>
+												<form action="" method="POST" class="inline">
+													@csrf
+													@method('DELETE')
+													<button type="submit" class="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200">Delete</button>
+												</form>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<blockquote class="text-sm border-l-4 border-gray-400 pl-4 italic relative">
+									<span class="absolute top-0 left-0 text-gray-400 text-3xl">"</span>
+									<span class="relative z-10">Lorem ipsum dolor sit ameni ab quasi repudiandae, ratione assumenda? Ea!</span>
+									<span class="absolute bottom-0 right-0 text-gray-400 text-3xl">"</span>
+							  </blockquote>
 						  </div>
+
 							{{-- <p class="text-gray-700">No reviews posted yet.</p> --}}
 					  </div>
 

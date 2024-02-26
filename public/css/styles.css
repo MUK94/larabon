@@ -212,9 +212,15 @@ header {
 	border-radius: 0.25rem;
 	background-color: var(--color3);
 }
-
-.search form input,
-.search form select {
+.search form .box {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem;
+	width: 100%;
+}
+.search form input {
+	border: 1px solid #111;
+	width: 100%;
 	border: none;
 	height: 40px;
 	padding: 0.5rem;

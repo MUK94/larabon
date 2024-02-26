@@ -138,3 +138,33 @@
 	margin-right: .5rem;
 }
 
+
+/* User Review */
+
+.review-container .user {
+	display: flex;
+	align-items: center;
+}
+
+
+.review-container .review {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.review-container .user {
+	margin-right: .5rem;
+}
+
+.review-container .user img {
+	width: 60px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.review-container blockquote {
+	text-align: center;
+	font-weight: 300;
+	font-size: 1rem;
+}
