@@ -273,11 +273,12 @@ header {
 	width: 260px;
 	margin-right: .5rem;
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-	border-radius: .75rem;
+	border-radius: .5rem;
 	cursor: pointer;
 }
 .bonnafaire-container .raw .box:hover {
 	background-color: #f5f6ff;
+	border-bottom: 3px solid var(--color1);
 }
 
 .bonnafaire-container .raw .box i {
@@ -411,6 +412,7 @@ header {
 
 .category-container .container .box:hover {
 	background-color: #f5f6ff;
+	border-bottom: 3px solid var(--color1);
 }
 
 .category-container .container .box i {

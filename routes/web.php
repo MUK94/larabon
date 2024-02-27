@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\ServiceListingsController;
 use Illuminate\Support\Facades\Route;
@@ -62,7 +63,11 @@ Route::resource('admin/category', CategoryController::class)
 	->only(['index', 'store', 'edit', 'update', 'destroy'])
 	->middleware(['auth', 'verified']);
 
-
+// Reviews
+// Route::post('/reviews', [ReviewController::class, 'store'])->middleware(['auth', 'verified']);
+Route::resource('reviews', ReviewController::class)
+	->only(['index','store','edit','update','destroy',])
+	->middleware(['auth', 'verified']);
 
 // Admin routes
 Route::get('/admin', [AdminPanelController::class, 'index'])->name('layouts.admin');

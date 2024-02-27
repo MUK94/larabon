@@ -21,7 +21,6 @@ return new class extends Migration
 					$table->integer('price');
 					$table->string('address');
 					$table->string('phone_number');
-					// $table->foreignId('category_id')->references('id')->on('categories')->onDelete('set null');
 					$table->string('cover_image')->nullable();
 					$table->timestamps();
         });
