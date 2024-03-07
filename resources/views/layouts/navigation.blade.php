@@ -8,9 +8,8 @@
 		<ul class="dropdown-content">
 
 			<div class="cat-drop">
-					<li><a href="/services">Tout</a></li>
 					@foreach ($categories as $category)
-						<li><a href="/categories/{{ $category->slug }}">{{ $category->name }}</a></li>
+						<li><a href="/categories/{{ $category->slug }}">{{ strtoupper($category->name) }}</a></li>
 					@endforeach
 			</div>
 		</ul>
@@ -53,7 +52,7 @@
 			</div>
 		@endguest
 		<div class="btn-action">
-			<a href="/add-service" class="btn btn-2">Vender vos Compétences</a>
+			<a href="/add-service" class="btn btn-2">Monétiser vos Compétences</a>
 		</div>
 	</div>
 </nav>

@@ -41,7 +41,9 @@
 
 
 
-# . Search functions
+
+#. Change colors
+# . Search functions by many fields
 
 # . Admin Panel for Admins
 

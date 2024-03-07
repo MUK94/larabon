@@ -4,9 +4,9 @@
 @section('content')
 {{-- {{ dd($query, $services)}} --}}
 	<div class="recommended-container content-layout">
-		<div class="title">
+		{{-- <div class="title">
 			<h2>Tous les Services </h2>
-		</div>
+		</div> --}}
 		<div class="searchBar">
 			@include('inc.search')
 		</div>

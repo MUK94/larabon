@@ -7,7 +7,7 @@
 			<div class="categories">
 				@foreach ($categories as $category)
 					<div class="cat-box">
-						<a href="/categories/{{ $category->slug }}">{{ $category->name }}</a>
+						<a href="/categories/{{ $category->slug }}">{{ ucfirst(strtolower($category->name ))}}</a>
 					</div>
 				@endforeach
 			</div>
