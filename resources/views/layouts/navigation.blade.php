@@ -16,7 +16,7 @@
 	</div>
 	<div class="nav-container">
 		<ul class="nav-links">
-				<li><a href="/">Accueil</a></li>
+				{{-- <li><a href="/">Accueil</a></li> --}}
 				<li><a href="/a-propos">A Propos</a></li>
 				<li><a href="/contact">Contact</a></li>
 		</ul>
