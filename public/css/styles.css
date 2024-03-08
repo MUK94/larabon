@@ -193,7 +193,7 @@ header {
 }
 
 .banner .right-banner {
-	width: 35%;
+	width: 40%;
 }
 .banner .right-banner img{
 	max-width:100%;
@@ -440,9 +440,11 @@ header {
 }
 
 .about-container .mission {
+	margin-bottom: 5rem;
+}
+.about-container .mission .container {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 5rem;
 }
 .about-container .mission .left {
 	padding: 4rem 0;
@@ -492,7 +494,6 @@ header {
 .recommended-container .btn {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	margin-top: 2rem;
 }
 .btn a,
@@ -502,13 +503,13 @@ header {
 	background-color: var(--color1);
 	border-radius: 1rem;
 	text-align: center;
-	padding: .35rem 2rem;
+	padding: .5rem 2rem;
 	color: #f1f1f1;
 
 }
 .btn a:hover,
 .btn a:hover {
-	background-color: #d0d7ff;
+	background-color: #d1d8ff;
 	color: var(--color1);
 }
 .about-container .btn a i,

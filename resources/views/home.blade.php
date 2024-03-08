@@ -53,9 +53,55 @@
 	</div>
 </section>
 
-<section class="bonnafaire-container content-layout">
-	@include('inc.howSection')
-	
+<section class="about-container content-layout">
+	<div class="title">
+		<h2>Une Nouvelle manière de <span>Collaborer</span></h2>
+	</div>
+	<div>
+		<div class="mission">
+			<div class="container">
+				<div class="left">
+					<h3>Monnayez vos Qualifications</h3>
+					<p>Faites bénéficier votre capacité dans un domaine spécifique aux personnes qui ont un besoin précis.
+						Vous avez la possibilitée de fournir un service et etre payé en retour.
+						Communiquez directement avec les clients qui souhaitent avoir un service que vous etes en mesure de réaliser parce que vous avez le savoir-faire et répondez à cette attente tout en générant du revenu.
+						Notre plateforme vous aide a gagner de l’argent.
+					</p>
+					<div class="btn">
+						<a href="/add-service">Rejoindre la Communauté <i class="fa-solid fa-circle-arrow-right"></i></a>
+					</div>
+				</div>
+				<div class="right">
+					<img src="{{ asset('img/about-1.jpg') }}" alt="Bonnafaire Team">
+				</div>
+			</div>
+		</div>
+		<div class="story">
+			<h3>Trouvez le meilleur Professionnel</h3>
+			<div class="container">
+				<div class="left">
+					<div class="video">
+						<video width="620" height="340" controls autoplay>
+							<source src="{{ asset('img/my-video.mp4') }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>
+				</div>
+				<div class="right">
+					<p>
+						Vous voulez avoir du travail durant toute l’année ?
+						vous souhaitez démontrer l’étendue de votre talent ?
+						Avec Bonnafaire vous avez l’assurance d’avoir des revenus réguliers
+						avec des clients qui ont toujours besoin qu’un travail de qualité soit fait. <br>
+						<b>Alors mettez de la réussite dans ce que vous entreprenez et devenez pionnier dans votre secteur d’activité.</b>
+					</p>
+					<div class="btn">
+						<a href="/services">Trouvez le Meilleur <i class="fa-solid fa-circle-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 @endsection

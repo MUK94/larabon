@@ -162,8 +162,13 @@
 					</div>
 					<p>{{ $service->author_bio }}</p>
 					<div class="contact">
-						<a href="{{ 'tel:'.$service->phone_number }}"><i class="fa-solid fa-phone"></i>Appelez</a>
-						<a href="#" class="btn"><i class="fa-solid fa-comment-dots"></i>Contactez</a>
+						<div class="btn">
+							<a href="#" class="btn"><i class="fa-solid fa-comment-dots"></i>Contactez</a>
+						</div>
+						<div class="btn">
+							<a href="{{ 'tel:'.$service->phone_number }}"><i class="fa-solid fa-phone"></i>Appelez</a>
+						</div>
+
 					</div>
 				</div>
 			</div>
