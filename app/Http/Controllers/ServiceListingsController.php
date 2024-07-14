@@ -24,13 +24,13 @@ class ServiceListingsController extends Controller
 
 
 		// Searching
-		$searching_services = Service::search(trim($request->get('search')) ?? '')->query(function ($query) {
-			$query->join('categories', 'services.category_id', 'categories.id')
-			->select(['services.id', 'services.title', 'services.description', 'categories.name as category'])
-			->orderBy('services.id', 'DESC');
-		})->get();
+		// $searching_services = Service::search(trim($request->get('search')) ?? '')->query(function ($query) {
+		// 	$query->join('categories', 'services.category_id', 'categories.id')
+		// 	->select(['services.id', 'services.title', 'services.description', 'categories.name as category'])
+		// 	->orderBy('services.id', 'DESC');
+		// })->get();
 
-		return view('serviceListings.index')->with(['services' => $services, 'searching_services' => $searching_services, 'title' => $title, 'categories' => $categories]);
+		return view('serviceListings.index')->with(['services' => $services,'title' => $title, 'categories' => $categories]);
 
 	}
 
